@@ -1,0 +1,27 @@
+/* 공통사항 */
+/* 940 / 720 / 96% */
+.wrap {width: 940px; margin: auto;}
+
+/* 상단(Header) */
+.header {background-color: #394165; font-size: 0.875rem; color: #9099b7;}
+.header a {color: #9099b7; text-decoration: none;}
+.header a:hover {color: #f1f1f1;}
+.header i {width: 24px; height: 24px; border-radius: 50%; border: 1px solid #9099b7; text-align: center; line-height: 22px; font-size: 0.75em;}
+.tops {padding: 0.5em 0;}
+.top-lt {float: left; padding-top: 0.25em;}
+.top-lt > li {float: left; padding-right: 1em; line-height: 1; text-align: left;}
+.top-lt > li:not(:first-child) {padding-left: 1em;}
+.top-lt > li:not(:last-child) {border-right: 1px solid #9099b7;}
+.top-rt {float: right;}
+.top-rt > li {float: left;}
+.top-rt > li:not(:first-child) {padding-left: 1em;}
+.top-rt > li:not(:last-child) {padding-right: 1em; border-right: 1px solid #9099b7; line-height: 1;}
+
+
+@media screen and (max-width: 968px) {
+	.wrap {width: 720px;}
+}
+
+@media screen and (max-width: 768px) {
+	.wrap {width: 96%;}
+}
