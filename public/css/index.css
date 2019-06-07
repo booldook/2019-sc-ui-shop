@@ -20,9 +20,9 @@
 .navis {padding: 2rem 0; display: flex; justify-content: space-between; align-items: center;}
 .navi > li {float: left; padding: 0.5rem 1rem; cursor: pointer;}
 .navi-bar {
-	border: 1px solid #eee; width: 0%; opacity: 0;
-	margin: auto; transform: translateY(0.25rem); transition: width 1s, opacity 0.1s;}
-.navi-bar-hover {width: 80%; opacity: 1;}
+	background-color: #eee; width: 0%; height:2px;
+	margin: auto; transform: translateY(0.25rem); transition: width 1s;}
+.navi-bar-hover {width: 80%;}
 
 
 @media screen and (max-width: 968px) {
