@@ -19,12 +19,12 @@
 
 .navis {padding: 2rem 0; display: flex; justify-content: space-between; align-items: center;}
 .navi {position: relative;}
-.navi > li {float: left; padding: 0.5rem 1rem; cursor: pointer;}
+.navi > li {float: left; padding: 0.5rem 1rem; cursor: pointer; border: 1px solid red;}
 .navi-bar {
 	background-color: #eee; width: 0%; height:2px;
 	margin: auto; transform: translateY(0.25rem); transition: width 1s;}
 .navi-bar-hover {width: 80%;}
-.navi-subs {background-color: #fff; position: absolute; right: 0; top: 5rem; padding: 1rem; display: none;}
+.navi-subs {background-color: #fff; position: absolute; right: 0; top: 5rem; padding: 1rem; display: none; opacity: 0;}
 .navi > li:nth-child(1) > .navi-subs {width: 800px; display: none; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start;}
 .navi > li:nth-child(1) > .navi-subs > ul {flex: 0 1 23%; margin: 1%;}
 .navi > li:nth-child(1) > .navi-subs img {border: 1px solid #ccc;}
