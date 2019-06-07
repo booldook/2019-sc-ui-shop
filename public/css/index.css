@@ -6,8 +6,8 @@
 .header {background-color: #394165; font-size: 0.875rem; color: #9099b7;}
 .header a {color: #9099b7; text-decoration: none;}
 .header a:hover {color: #f1f1f1;}
-.header i {width: 24px; height: 24px; border-radius: 50%; border: 1px solid #9099b7; text-align: center; line-height: 22px; font-size: 0.75em;}
-.tops {padding: 0.5em 0;}
+.tops {padding: 0.5em 0; border-bottom: 1px solid #5d6688;}
+.tops i {width: 24px; height: 24px; border-radius: 50%; border: 1px solid #9099b7; text-align: center; line-height: 22px; font-size: 0.75em;}
 .top-lt {float: left; padding-top: 0.25em;}
 .top-lt > li {float: left; padding-right: 1em; line-height: 1; text-align: left;}
 .top-lt > li:not(:first-child) {padding-left: 1em;}
@@ -16,6 +16,13 @@
 .top-rt > li {float: left;}
 .top-rt > li:not(:first-child) {padding-left: 1em;}
 .top-rt > li:not(:last-child) {padding-right: 1em; border-right: 1px solid #9099b7; line-height: 1;}
+
+.navis {padding: 2rem 0; display: flex; justify-content: space-between; align-items: center;}
+.navi > li {float: left; padding: 0.5rem 1rem; cursor: pointer;}
+.navi-bar {
+	border: 1px solid #eee; width: 0%; opacity: 0;
+	margin: auto; transform: translateY(0.25rem); transition: width 1s, opacity 0.1s;}
+.navi-bar-hover {width: 80%; opacity: 1;}
 
 
 @media screen and (max-width: 968px) {
