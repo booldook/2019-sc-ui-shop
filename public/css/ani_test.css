@@ -1,0 +1,31 @@
+.wrap {width: 1000px; margin: 50px auto; border: 10px solid orange;}
+.box1 {width: 200px; height: 50px; background: orangered;
+	transition: all 2s;
+	/* transition: width 2s, height 2s; */
+	/* transition-duration: 2s; transition-property: width; */
+	transition-delay: 0;
+	transition-timing-function: ease-in-out;
+}
+.box1:hover {width: 100%; height: 200px;}
+
+.box2 {width: 200px; height: 200px; background-color: orangered; transition: transform 3s; transition-timing-function: ease-in-out;}
+.box2:hover {transform: rotate(1800deg);}
+
+.box3 {width: 200px; height: 200px; background-color: orangered; transition: transform 3s; transition-timing-function: ease-in-out;}
+
+.box4 {width: 200px; height: 200px; background-color: orangered;
+animation-name: ani4;
+animation-duration: 5s;
+animation-direction: alternate-reverse;
+animation-delay: 2s;
+animation-iteration-count: 1;
+animation-timing-function: ease-in-out;
+animation-fill-mode: backwards;
+/* animation-play-state: ; */
+}
+
+@keyframes ani4 {
+	0% 		{transform: rotate(0deg);}
+	50% 	{transform: rotate(3600deg);}
+	100% 	{transform: rotate(1600deg);}
+}
