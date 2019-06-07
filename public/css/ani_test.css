@@ -15,17 +15,23 @@
 
 .box4 {width: 200px; height: 200px; background-color: orangered;
 animation-name: ani4;
-animation-duration: 5s;
-animation-direction: alternate-reverse;
-animation-delay: 2s;
-animation-iteration-count: 1;
-animation-timing-function: ease-in-out;
-animation-fill-mode: backwards;
+animation-duration: 1s;
+/* animation-direction: alternate; */
+/* animation-delay: 2s; */
+/* animation-iteration-count: 1; */
+/* animation-timing-function: ease-in-out; */
+/* animation-fill-mode: forwards; */
 /* animation-play-state: ; */
 }
 
+.box4:hover {animation-name: ani4-hover;}
+
 @keyframes ani4 {
 	0% 		{transform: rotate(0deg);}
-	50% 	{transform: rotate(3600deg);}
-	100% 	{transform: rotate(1600deg);}
+	100% 	{transform: rotate(360deg);}
+}
+
+@keyframes ani4-hover {
+	0% 		{transform: rotate(360deg);}
+	100% 	{transform: rotate(0deg);}
 }
