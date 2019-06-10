@@ -5,9 +5,8 @@ $(".navi > li").mouseover(function(){
 			$(this).find(".navi-subs").css({"display":"flex"});
 			break;
 		case 1:
+		case 2:
 			$(this).find(".navi-subs").css({"display":"block"});
-			break;
-		default:
 			break;
 	}
 	$(this).find(".navi-bar").addClass("navi-bar-hover");

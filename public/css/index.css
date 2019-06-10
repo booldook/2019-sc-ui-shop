@@ -1,6 +1,10 @@
 /* 공통사항 */
 /* 940 / 720 / 96% */
-body {height: 5000px;}
+@import url('https://fonts.googleapis.com/css?family=Arimo|Raleway&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+/* font-family: 'Arimo', sans-serif; */
+html, body {font-family: 'Arimo', sans-serif; height: 5000px;}
+
 .wrap {width: 940px; margin: auto;}
 
 /* 상단(Header) */
@@ -25,7 +29,7 @@ body {height: 5000px;}
 	background-color: #eee; width: 0%; height:2px;
 	margin: auto; transform: translateY(0.25rem); transition: width 1s;}
 .navi-bar-hover {width: 80%;}
-.navi-subs {background-color: #fff; position: absolute; right: 0; top: 5rem; padding: 1rem; opacity: 0;}
+.navi-subs {background-color: #fff; position: absolute; right: 0; top: 5rem; padding: 1rem; opacity: 0; border: 1px solid #eee;}
 
 /* 상단1번 서브 */
 .navi > li:nth-child(1) > .navi-subs {width: 800px; display: none; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start;}
@@ -34,9 +38,23 @@ body {height: 5000px;}
 .navi > li:nth-child(1) > .navi-subs > .navi-sub > :last-child {color: #333; text-align: center; padding: 0.5rem 0;}
 
 /* 상단2번 서브 */
-.navi > li:nth-child(2) > .navi-subs {width: 800px; display: block ; padding: 2rem 1rem;}
+.navi > li:nth-child(2) > .navi-subs {width: 800px; display: none ; padding: 2rem 1rem;}
 .navi > li:nth-child(2) > .navi-subs > ul {float: left; width: 23%; margin-right: 2.66%;}
 .navi > li:nth-child(2) > .navi-subs > ul:last-child {margin-right: 0;}
+.navi > li:nth-child(2) > .navi-subs li:nth-child(2) {margin: 0.5rem 0; height: 36px; border-bottom: 1px solid #ccc; line-height: 36px;}
+.navi > li:nth-child(2) > .navi-subs span {border-bottom: 1px solid #11a8ab; height:35px; display: inline-block; color: #333;}
+.navi > li:nth-child(2) > .navi-subs div {margin: 0.5rem 0;}
+
+/* 상단3번 서브 */
+.navi > li:nth-child(3) > .navi-subs {width: 800px; display: none ; padding: 2rem 1rem;}
+.navi > li:nth-child(3) > .navi-subs > div:first-child {float: left; width: 75%;}
+.navi > li:nth-child(3) > .navi-subs > div:last-child {float: right; width: 22%;}
+.navi-sub3 {display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;}
+.navi-sub3 > ul {flex: 0 0 28%; margin-bottom: 3rem;}
+.navi-sub3 > ul > li:first-child {margin: 0.5rem 0; height: 36px; border-bottom: 1px solid #ccc; line-height: 36px;}
+.navi-sub3 > ul > li:not(:first-child) {margin: 0.5rem 0;}
+.navi-sub3 span {border-bottom: 1px solid #11a8ab; height:35px; display: inline-block; color: #333;}
+
 
 
 
