@@ -55,12 +55,17 @@ html, body {font-family: 'Arimo', sans-serif; height: 5000px;}
 .navi-sub3 > ul > li:not(:first-child) {margin: 0.5rem 0;}
 .navi-sub3 span {border-bottom: 1px solid #11a8ab; height:35px; display: inline-block; color: #333;}
 
-/* 상단1번 서브 */
+/* 상단4번 서브 */
 .navi > li:nth-child(4) > .navi-subs {width: 800px; display: none; justify-content: space-between; align-items: flex-start;}
 .navi > li:nth-child(4) > .navi-subs > ul {flex: 0 1 20%; margin-bottom: 3rem;}
 .navi-sub4 > ul > li:first-child {margin: 0.5rem 0; height: 36px; border-bottom: 1px solid #ccc; line-height: 36px;}
 .navi-sub4 > ul > li:not(:first-child) {margin: 0.5rem 0;}
 .navi-sub4 span {border-bottom: 1px solid #11a8ab; height:35px; display: inline-block; color: #333;}
+
+/* 상단5번 서브 */
+.navi > li:nth-child(5) > .navi-subs {display: none; min-width: 160px; padding: 0;}
+.navi > li:nth-child(5) > .navi-subs > li {padding: 0.5rem 1rem; cursor: pointer;}
+.navi > li:nth-child(5) > .navi-subs > li:hover {background-color: #ddd; color: #11a8ab;}
 
 
 @media screen and (max-width: 968px) {
