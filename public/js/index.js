@@ -2,6 +2,7 @@
 $(".navi > li").mouseover(function(){
 	switch($(this).index()) {
 		case 0:
+		case 3:
 			$(this).find(".navi-subs").css({"display":"flex"});
 			break;
 		case 1:
