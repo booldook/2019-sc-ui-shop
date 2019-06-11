@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const db = require('./module/mysql_conn');
+const conn = db.conn;
 
 app.listen(port, () => {
 	console.log("Connected at "+port);
@@ -17,9 +18,9 @@ app.use('/', express.static('./public'));
 
 // Router
 app.post('/admin/:method', (req, res) => {
-	var method = req.params.method;
-	var uid = req.body.uid;
-	var upw = req.body.upw;
+	var method = req.params.method;		//login
+	var uid = req.body.uid;						//admin
+	var upw = req.body.upw;						//111111
 	switch(method) {
 		case "login":
 			// 데이터베이스 접근
@@ -37,7 +38,16 @@ app.post('/admin/:method', (req, res) => {
 						}
 						else {
 							connect.release();
-							res.send('dddd');
+							if(result[0]) {
+								res.redirect("/admin/admin.html");
+							}
+							else {
+								vals = {
+									alertMsg: "아이디와 패스워드를 확인해 주세요.",
+									locURL: "/admin/login.html"
+								};
+								res.render('alert', vals);
+							}
 						}
 					});
 				}
