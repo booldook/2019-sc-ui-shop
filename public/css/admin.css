@@ -8,3 +8,10 @@
 	background-color: #eee; width: 0%; height:2px;
 	margin: auto; transform: translateY(0.25rem); transition: width 1s;}
 .navi-bar-hover {width: 80%;}
+
+
+.login_wrap {height: calc(100% - 114px); display: flex; justify-content: center; align-items: center;}
+.logins {width: 400px; padding: 2rem; border: 2px solid #ccc; border-radius: 4px;}
+.logins .tit {width: 35%; float: left; padding: 0.25rem 0;}
+.logins .cont {width: 60%; float: right; padding: 0.25rem 0;}
+.logins .bts {margin-top: 1rem;}
