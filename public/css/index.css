@@ -5,7 +5,7 @@
 /* font-family: 'Arimo', sans-serif; */
 html, body {font-family: 'Arimo', sans-serif; height: 5000px;}
 
-.wrap {width: 940px; margin: auto;}
+.wrap {width: 1170px; margin: auto;}
 
 /* 상단(Header) */
 .header {background-color: #394165; font-size: 0.875rem; color: #9099b7;}
@@ -66,6 +66,21 @@ html, body {font-family: 'Arimo', sans-serif; height: 5000px;}
 .navi > li:nth-child(5) > .navi-subs {display: none; min-width: 160px; padding: 0;}
 .navi > li:nth-child(5) > .navi-subs > li {padding: 0.5rem 1rem; cursor: pointer;}
 .navi > li:nth-child(5) > .navi-subs > li:hover {background-color: #ddd; color: #11a8ab;}
+
+@media screen and (max-width: 1280px) {
+	.wrap {width: 940px;}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 968px) {
