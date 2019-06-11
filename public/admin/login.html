@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/animate.css">
 	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../css/login.css">
+	<link rel="stylesheet" href="../css/admin.css">
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/anime.min.js"></script>
@@ -17,28 +17,50 @@
 	<script src="../js/util.js"></script>
 </head>
 <body>
-	<div>
+	<div class="header">
 		<ul class="navis wrap">
-			<div class="logo"><img src="img/Logo-12.png" alt=""></div>
+			<div class="logo"><img src="../img/Logo-12.png" alt=""></div>
 			<ul class="navi clear">
-				<li>
+				<li data-url="cate_top.html">
 					상단 카테고리관리 <i class="fas fa-angle-down"></i>
 					<div class="navi-bar"></div>
 				</li>
-				<li>
+				<li data-url="cate_left.html">
 					좌측 카테고리관리 <i class="fas fa-angle-down"></i>
 					<div class="navi-bar"></div>
 				</li>
-				<li>
+				<li data-url="ban.html">
 					배너관리 <i class="fas fa-angle-down"></i>
 					<div class="navi-bar"></div>
 				</li>
-				<li>
+				<li data-url="prd.html">
 					상품관리 <i class="fas fa-angle-down"></i>
 					<div class="navi-bar"></div>
 				</li>
 			</ul>
 		</ul>
+	</div>
+	<div class="contents login_wrap">
+		<div class="logins">
+			<form action="/admin/login" method="post">
+				<div>
+					<span class="tit">관리자 아이디: </span>
+					<span class="cont">
+						<input type="text" name="uid" id="uid" placeholder="아이디" class="form-control">
+					</span>
+				</div>
+				<div>
+					<span class="tit">패스워드: </span>
+					<span class="cont">
+						<input type="password" name="upw" id="upw" placeholder="패스워드" class="form-control">
+					</span>
+				</div>
+				<div class="text-center">
+					<button type="submit" class="btn btn-primary">로그인</button>
+					<button type="button" class="btn btn-danger" onclick="location.href='../index.html';">쇼핑몰 돌아가기</button>
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>

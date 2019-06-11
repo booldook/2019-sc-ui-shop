@@ -1,0 +1,10 @@
+.wrap {width: 1170px; margin: auto;}
+
+.header {background-color: #394165; font-size: 0.875rem; color: #9099b7;}
+.navis {padding: 2rem 0; display: flex; justify-content: space-between; align-items: center;}
+.navi {position: relative;}
+.navi > li {float: left; padding: 0.5rem 1rem; cursor: pointer;}
+.navi-bar {
+	background-color: #eee; width: 0%; height:2px;
+	margin: auto; transform: translateY(0.25rem); transition: width 1s;}
+.navi-bar-hover {width: 80%;}
