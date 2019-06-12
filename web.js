@@ -39,7 +39,7 @@ app.post('/admin/:method', (req, res) => {
 						else {
 							connect.release();
 							if(result[0]) {
-								res.redirect("/admin/admin.html");
+								res.redirect("/admin/cate_top1.html");
 							}
 							else {
 								vals = {
