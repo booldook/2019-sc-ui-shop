@@ -158,3 +158,5 @@ function vCommaDel(val) {
 	var str = "" + String(val).replace(/,/gi,''); // 콤마 제거
 	return Number(str);
 }
+
+
