@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="../css/animate.css">
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../css/admin.css">
+	<link rel="stylesheet" href="../css/cate_top1.css">
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/anime.min.js"></script>
@@ -19,8 +20,36 @@
 <body>
 	<div class="header" w3-include-html="../inc/nav.html"></div>
 	<!-- 본문내용.시작 -->
-	
+	<div class="wrap">
+		<div class="news">
+			<form action="/admin/top1/c" method="post" enctype="multipart/form-data">
+				<div class="new clear">
+					<div class="tit">제목: </div>
+					<div class="cont">
+						<input type="text" name="title" class="form-control" placeholder="제목">
+					</div>
+				</div>
+				<div class="new clear">
+					<div class="tit">링크주소: </div>
+					<div class="cont">
+						<input type="text" name="link" class="form-control" placeholder="링크주소">
+					</div>
+				</div>
+				<div class="new clear">
+					<div class="tit">이미지: </div>
+					<div class="cont">
+						<input type="file" name="img" class="form-control-file" placeholder="이미지">
+					</div>
+				</div>
+				<div class="bts">
+					<button type="submit" class="btn btn-primary">저장</button>
+					<button type="reset" class="btn btn-danger">다시작성</button>
+				</div>
+			</form>
+		</div>
+	</div>
 	<!-- 본문내용.종료 -->
 	<script src="../js/admin.js"></script>
+	<script src="../js/cate_top1.js"></script>
 </body>
 </html>

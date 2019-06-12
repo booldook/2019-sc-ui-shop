@@ -58,3 +58,36 @@ app.post('/admin/:method', (req, res) => {
 			break;
 	}
 });
+
+// Ajax 요청 관리
+/*
+/ajax/cate/:top,left/:c,r,u,d
+/ajax/cate_sub/:num/:c,r,u,d
+/ajax/ban/:c,r,u,d
+/ajax/prd/:c,r,u,d
+*/
+app.get('/ajax/cate/:method/:chk', (req, res) => {
+	var method = req.params.method;
+	var chk = req.params.chk;
+	switch(method) {
+		case "top":
+			switch(chk) {
+				case "c":
+					break;
+				case "r":
+					res.send("정상");
+					break;
+				case "u":
+					break;
+				case "d":
+					break;
+				default:
+					res.send("ERROR! 정상적인 접근이 아닙니다.");
+					break;
+			}
+			break;
+		default:
+			res.send("ERROR! 정상적인 접근이 아닙니다.");
+			break;
+	}
+});
