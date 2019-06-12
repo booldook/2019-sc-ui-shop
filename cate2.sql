@@ -11,8 +11,40 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- 테이블 booldook.cate2 구조 내보내기
-CREATE TABLE IF NOT EXISTS `cate2` (
+-- 테이블 booldook.admin 구조 내보내기
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(50) NOT NULL,
+  `upw` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- 테이블 데이터 booldook.admin:~0 rows (대략적) 내보내기
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` (`id`, `uid`, `upw`) VALUES
+	(1, 'admin', '111111');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+
+-- 테이블 booldook.cates 구조 내보내기
+CREATE TABLE IF NOT EXISTS `cates` (
+  `id` int(5) unsigned NOT NULL AUTO_INCREMENT,
+  `catename` varchar(255) NOT NULL DEFAULT '',
+  `catelink` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- 테이블 데이터 booldook.cates:~5 rows (대략적) 내보내기
+/*!40000 ALTER TABLE `cates` DISABLE KEYS */;
+INSERT INTO `cates` (`id`, `catename`, `catelink`) VALUES
+	(1, 'HOME', 'cate_top1.html'),
+	(2, 'FASHION', 'cate_top2.html'),
+	(3, 'FOODS', 'cate_top3.html'),
+	(4, 'SHOP', 'cate_top4.html'),
+	(5, 'BLOG', 'cate_top5.html');
+/*!40000 ALTER TABLE `cates` ENABLE KEYS */;
+
+-- 테이블 booldook.cate_sub 구조 내보내기
+CREATE TABLE IF NOT EXISTS `cate_sub` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `pid` int(5) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
@@ -21,11 +53,11 @@ CREATE TABLE IF NOT EXISTS `cate2` (
   `grp` int(5) NOT NULL,
   `lev` int(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- 테이블 데이터 booldook.cate2:~0 rows (대략적) 내보내기
-/*!40000 ALTER TABLE `cate2` DISABLE KEYS */;
-INSERT INTO `cate2` (`id`, `pid`, `title`, `img`, `link`, `grp`, `lev`) VALUES
+-- 테이블 데이터 booldook.cate_sub:~23 rows (대략적) 내보내기
+/*!40000 ALTER TABLE `cate_sub` DISABLE KEYS */;
+INSERT INTO `cate_sub` (`id`, `pid`, `title`, `img`, `link`, `grp`, `lev`) VALUES
 	(1, 2, 'MEN\'S', NULL, '#', 1, 0),
 	(2, 2, 'Top\r\n\r\n', NULL, '#', 1, 1),
 	(3, 2, 'T Shirt\r\n', NULL, '#', 1, 1),
@@ -49,7 +81,7 @@ INSERT INTO `cate2` (`id`, `pid`, `title`, `img`, `link`, `grp`, `lev`) VALUES
 	(21, 2, 'Shoes', NULL, '#', 19, 1),
 	(22, 2, 'Clothing', NULL, '#', 19, 1),
 	(23, 2, 'Hand bag', NULL, '#', 19, 1);
-/*!40000 ALTER TABLE `cate2` ENABLE KEYS */;
+/*!40000 ALTER TABLE `cate_sub` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
