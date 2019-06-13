@@ -65,6 +65,11 @@ app.post('/admin/:method', (req, res) => {
 /ajax/cate_sub/:num/:c,r,u,d
 /ajax/ban/:c,r,u,d
 /ajax/prd/:c,r,u,d
+conn.getConnection((err, connect)=>{
+	connect.query(sql, (err, result, field)=>{
+
+	});
+});
 */
 app.get('/ajax/cate/:method/:chk', (req, res) => {
 	var method = req.params.method;
@@ -72,12 +77,16 @@ app.get('/ajax/cate/:method/:chk', (req, res) => {
 	switch(method) {
 		case "top":
 			switch(chk) {
-				case "c":
-					break;
 				case "r":
-					res.send("정상");
-					break;
-				case "u":
+					conn.getConnection((err, connect) => {
+						if(err) res.send("Database 접속이 불안정 합니다.<br>다시 시도해 주세요.");
+						else {
+							var sql = " SELECT * FROM cates ORDER BY id ASC ";
+							connect.query(sql, (err, result, field) => {
+								res.send(result);
+							});
+						}
+					});
 					break;
 				case "d":
 					break;
