@@ -85,29 +85,18 @@ app.get(['/ajax/top/:method', '/ajax/top/:method/:id'], (req, res) => {
 				case "r":
 					var sql = "SELECT * FROM cates WHERE pos='T' ORDER BY id ASC";
 					connect.query(sql, (err, result, field) => {
-						if(err) {
-							connect.release();
-							res.send("MySQL Query Error!");
-						}
-						else {
-							var cateTop = result;
-							for(let i in cateTop) {
-								var sql = `SELECT * FROM cate_sub WHERE pid = ${cateTop[i].id} ORDER BY lev ASC, id ASC`;
-								connect.query(sql, (err, result2, field) => {
-									if(err) res.send("MySQL Query Error!");
-									else {
-										cateTop[i].subs = result2;
-									}
-								});
-							}
-							connect.release();
-							res.send(cateTop);
-						}
+						connect.release();
+						if(err) res.send("MySQL Query Error!");
+						else res.send(result);
 					});
 					break;
-				case "r1": 
-					break;
-				case "r2": 
+				case "r2":
+					var sql = `SELECT * FROM cate_sub WHERE pid = ${id} ORDER BY grp ASC, lev ASC, id ASC`;
+					connect.query(sql, (err, result, field) => {
+						connect.release();
+						if(err) res.send("MySQL Query Error!");
+						else res.send(result);
+					}); 
 					break;
 				case "r3": 
 					break;

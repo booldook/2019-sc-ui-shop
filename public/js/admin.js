@@ -17,13 +17,14 @@ function includeHTML() {
 						// 서버에서 불러온 html이 본 문서에 적용 된 후
 						$.ajax({
 							type: "get",
-							url: "/ajax/cate/top/r",
+							url: "/ajax/top/r2/2",
 							dataType: "json",
 							success: function (res) {
 								var html = '';
 								html += '<ul class="navi-sub">';
 								for(var i in res) {
-									html += '<li class="link-elm" data-url="'+res[i].catelink+'">'+res[i].catename+'</li>';
+									if(res[i].lev == 0)
+									html += '<li class="link-elm" data-url="'+res[i].link+'">'+res[i].title+'</li>';
 								}
 								html += '</ul>';
 								$(".navi > li").eq(1).append(html);
