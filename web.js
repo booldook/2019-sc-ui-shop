@@ -71,32 +71,56 @@ conn.getConnection((err, connect)=>{
 	});
 });
 */
-app.get('/ajax/cate/:method/:chk', (req, res) => {
+
+app.get(['/ajax/top/:method', '/ajax/top/:method/:id'], (req, res) => {
 	var method = req.params.method;
-	var chk = req.params.chk;
-	switch(method) {
-		case "top":
-			switch(chk) {
+	var id = req.params.id;
+	conn.getConnection((err, connect) => {
+		if(err) {
+			connect.release();
+			res.send("MySQL Connect Error!");
+		}
+		else {
+			switch(method) {
 				case "r":
-					conn.getConnection((err, connect) => {
-						if(err) res.send("Database 접속이 불안정 합니다.<br>다시 시도해 주세요.");
+					var sql = "SELECT * FROM cates WHERE pos='T' ORDER BY id ASC";
+					connect.query(sql, (err, result, field) => {
+						if(err) {
+							connect.release();
+							res.send("MySQL Query Error!");
+						}
 						else {
-							var sql = " SELECT * FROM cates ORDER BY id ASC ";
-							connect.query(sql, (err, result, field) => {
-								res.send(result);
-							});
+							var cateTop = result;
+							for(let i in cateTop) {
+								var sql = `SELECT * FROM cate_sub WHERE pid = ${cateTop[i].id} ORDER BY lev ASC, id ASC`;
+								connect.query(sql, (err, result2, field) => {
+									if(err) res.send("MySQL Query Error!");
+									else {
+										cateTop[i].subs = result2;
+									}
+								});
+							}
+							connect.release();
+							res.send(cateTop);
 						}
 					});
 					break;
-				case "d":
+				case "r1": 
+					break;
+				case "r2": 
+					break;
+				case "r3": 
+					break;
+				case "d": 
 					break;
 				default:
-					res.send("ERROR! 정상적인 접근이 아닙니다.");
 					break;
 			}
-			break;
-		default:
-			res.send("ERROR! 정상적인 접근이 아닙니다.");
-			break;
-	}
+		}
+	});
 });
+app.get('/ajax/left/', (req, res)=>{});
+app.get('/ajax/ban/', (req, res)=>{});
+app.get('/ajax/prd/', (req, res)=>{});
+
+
