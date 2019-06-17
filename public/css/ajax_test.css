@@ -1,0 +1,6 @@
+.navi-subs {width: 800px; padding: 2rem 1rem;}
+.navi-subs > ul {float: left; width: 23%; margin-right: 2.66%;}
+.navi-subs > ul:last-child {margin-right: 0;}
+.navi-subs li:nth-child(2) {margin: 0.5rem 0; height: 36px; border-bottom: 1px solid #ccc; line-height: 36px;}
+.navi-subs span {border-bottom: 1px solid #11a8ab; height:35px; display: inline-block; color: #333;}
+.navi-subs div {margin: 0.5rem 0;}
